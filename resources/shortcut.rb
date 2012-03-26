@@ -25,3 +25,8 @@ attribute :target, :kind_of => String
 attribute :arguments, :kind_of => String
 attribute :description, :kind_of => String
 attribute :cwd, :kind_of => String
+
+def initialize(*args)
+  super
+  @action = :create
+end

@@ -34,3 +34,8 @@ attribute :checksum, :kind_of => String
 
 # allow target dirtory of installation to be set
 #attribute :target_dir
+
+def initialize(*args)
+  super
+  @action = :instal
+end
