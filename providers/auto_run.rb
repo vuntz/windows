@@ -22,6 +22,7 @@ action :create do
   windows_registry 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run' do
     values new_resource.name => "\"#{new_resource.program}\" #{new_resource.args}"
   end
+  new_resource.updated_by_last_action(true)
 end
 
 action :remove do 
@@ -29,4 +30,5 @@ action :remove do
     values new_resource.name => ''
     action :remove
   end
+  new_resource.updated_by_last_action(true)
 end

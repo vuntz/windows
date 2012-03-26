@@ -43,6 +43,7 @@ action :run do
   ensure
     unlink_script_file
   end
+  new_resource.updated_by_last_action(true)
 end
 
 private

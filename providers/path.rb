@@ -24,4 +24,5 @@ action :add do
     delim ::File::PATH_SEPARATOR
     value new_resource.path
   end
+  new_resource.updated_by_last_action(true)
 end

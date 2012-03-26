@@ -26,10 +26,12 @@ include Windows::RegistryHelper
 
 action :create do
   registry_update(:create)
+  new_resource.updated_by_last_action(true)
 end
 
 action :modify do
   registry_update(:open)
+  new_resource.updated_by_last_action(true)
 end
 
 action :force_modify do
